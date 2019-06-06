@@ -50,7 +50,6 @@
         <source-file src="platforms/android/src/org/crosswalk/engine/XWalkCordovaHttpAuthHandler.java" target-dir="src/org/crosswalk/engine"/>
 
         <framework src="platforms/android/xwalk.gradle" custom="true" type="gradleReference"/>
-        <framework src="com.android.support:support-v4:26.0.0+" />
 
         <hook type="after_plugin_install" src="hooks/after_plugin_install/000-shared_mode_special.js"/>
         <hook type="before_plugin_uninstall" src="hooks/before_plugin_uninstall/000-shared_mode_special.js"/>
