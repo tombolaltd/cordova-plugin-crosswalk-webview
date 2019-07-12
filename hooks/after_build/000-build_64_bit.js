@@ -3,7 +3,8 @@
 module.exports = function(context) {
 
     /** @external */
-    var UpdateConfig = require('./../update_config.js'),
+    var deferral = require('q').defer(),
+        UpdateConfig = require('./../update_config.js'),
         updateConfig = new UpdateConfig(context);
 
     /** Main method */
@@ -11,9 +12,11 @@ module.exports = function(context) {
         // Remove the xwalk variables
         updateConfig.afterBuild64bit();
 
-        return Promise.resolve();
+        deferral.resolve();
     };
 
-    return main();
+    main();
+
+    return deferral.promise;
 
 };
