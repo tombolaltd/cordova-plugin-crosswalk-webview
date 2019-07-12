@@ -3,8 +3,7 @@
 module.exports = function(context) {
 
     /** @external */
-    var deferral = context.requireCordovaModule('q').defer(),
-        UpdateConfig = require('./../update_config.js'),
+    var UpdateConfig = require('./../update_config.js'),
         updateConfig = new UpdateConfig(context);
 
     /** Main method */
@@ -12,11 +11,11 @@ module.exports = function(context) {
         // Add xwalk preference to config.xml
         updateConfig.addPreferences();
 
-        deferral.resolve();
+        Promise.resolve();
     };
 
     main();
 
-    return deferral.promise;
+    return Promise.promise;
 
 };
