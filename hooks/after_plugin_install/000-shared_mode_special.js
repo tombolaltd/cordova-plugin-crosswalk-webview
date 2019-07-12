@@ -11,11 +11,9 @@ module.exports = function(context) {
         // Add xwalk preference to config.xml
         updateConfig.addPreferences();
 
-        Promise.resolve();
+        return Promise.resolve();
     };
 
-    main();
-
-    return Promise.promise;
+    return main();
 
 };
